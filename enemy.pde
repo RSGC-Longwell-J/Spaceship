@@ -27,7 +27,9 @@ class Enemy {
 
     //Ship body
     fill(shipfill1, shipfill2, shipfill3);
-    ellipse(x1, y1, r1*2, r1*2);
+    ellipse(x1, y1, r1*2, r1/4);
+    rect(x1+6,y1+3,6,6);
+    ellipse(x1+16,y1+8,r1*1.5,r1/6);
     
  //Makes the ship move
     
@@ -36,8 +38,8 @@ class Enemy {
     
     //put the ship back on screen
     if (x1<-25) {
-      x1=1300;
-      y1=100;
+      x1=1000;
+      y1=random(100,500);
       return;
     }
    
