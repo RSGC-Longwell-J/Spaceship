@@ -16,9 +16,9 @@ class Enemy {
     s1=s_;
     orig_s_=s_;
     r1=25;
-    shipfill1 = 23;
-    shipfill2 = 108;
-    shipfill3 = 7;
+    shipfill1 = 142;
+    shipfill2 = 136;
+    shipfill3 = 136;
   }
 
   //Draws things related to ship
@@ -26,24 +26,24 @@ class Enemy {
 
     //Ship body
     fill(shipfill1, shipfill2, shipfill3);
-    ellipse(x1,y1,20,20);
-    
     ellipse(x1-20,y1,20,40);
     ellipse(x1+20,y1,20,40);
-    
+    ellipse(x1,y1,20,20);
 
     //Makes the ship move
-
-
     x1=x1+s1;
 
     //put the ship back on screen
-    if (x1<-25) {
+    if ((x1<-25) &(orig_s_<0)) {
       x1=1000;
       y1=random(100, 500);
       return;
     }
 
+    if((x1>900) & (orig_s_>0)){
+      x1=-75;
+      y1=random(100,500);
+    }
     //Ship is still on screen
     return;
   }
