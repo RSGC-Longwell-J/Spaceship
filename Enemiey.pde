@@ -66,10 +66,7 @@ class Enemiey {
     //Ship is still on screen
     return;
   }
-
-}
-
-  //get x
+ //get x
   //Purpose: to return the cordinates of the ship
   float getX() {
     return x1;
@@ -82,3 +79,6 @@ class Enemiey {
   float getR() {
     return r1;
   }
+}
+
+ 
