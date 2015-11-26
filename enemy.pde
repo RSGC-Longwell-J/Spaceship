@@ -1,4 +1,4 @@
-class Enemiey {
+class Enemy {
   //Global variables
   float x1;
   float y1;
@@ -10,7 +10,7 @@ class Enemiey {
   int shipfill3;
 
   //Constructor
- Enemiey (float x_, float y_, float s_) {
+ Enemy (float x_, float y_, float s_) {
     x1=x_;
     y1=y_;
     s1=s_;
@@ -27,42 +27,20 @@ class Enemiey {
 
     //Ship body
     fill(shipfill1, shipfill2, shipfill3);
-    ellipse(x1, y1, r1*2, r1/4);
-    if (orig_s_<0) {
-      rect(x1+6,y1+3,6,6);
-      ellipse(x1+16,y1+8,r1*1.5,r1/6);
-    }
-    else {
-      rect(x1-12,y1+3,6,6);
-      ellipse(x1-14,y1+8,r1*1.5,r1/6);
-    }
-
+    ellipse(x1, y1, r1*2, r1*2);
+    
  //Makes the ship move
     
     
     x1=x1+s1;
     
     //put the ship back on screen
-    if ((x1<-25) & (orig_s_<0)) {
+    if (x1<-25) {
       x1=1300;
-      y1=int(random(100,500));
-      s1=orig_s_;
-      shipfill1 = 23;
-      shipfill2 = 108;
-      shipfill3 = 7;
+      y1=100;
       return;
     }
-    
-    //put the ship back on screen
-    if ((x1>1100) & (orig_s_>0)) {
-      x1=-50;
-      s1=orig_s_;
-      y1=int(random(100,500));
-      shipfill1 = 23;
-      shipfill2 = 108;
-      shipfill3 = 7;
-      return;
-    }
+   
     //Ship is still on screen
     return;
   }

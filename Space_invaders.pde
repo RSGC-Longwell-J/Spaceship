@@ -1,7 +1,7 @@
 //Space ships
 
 //variables
-Enemiey e1;
+Enemy e1;
 
 PImage space;
 
@@ -14,7 +14,7 @@ void setup() {
   space=loadImage("space-2.jpg");
   image(space, 0, 0);
   
-  e1=new Enemiey(1100, 100, -1);
+  e1=new Enemy(1100, 100, -1);
 }
 
 //things that run multiple times
@@ -25,7 +25,6 @@ void draw() {
   noStroke();
   
   background(255);
-  e1.update();
   
   image(space, 0, 0);
   
