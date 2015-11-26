@@ -10,7 +10,7 @@ class Enemy {
   int shipfill3;
 
   //Constructor
- Enemy (float x_, float y_, float s_) {
+  Enemy (float x_, float y_, float s_) {
     x1=x_;
     y1=y_;
     s1=s_;
@@ -19,7 +19,6 @@ class Enemy {
     shipfill1 = 23;
     shipfill2 = 108;
     shipfill3 = 7;
-
   }
 
   //Draws things related to ship
@@ -27,26 +26,28 @@ class Enemy {
 
     //Ship body
     fill(shipfill1, shipfill2, shipfill3);
-    ellipse(x1, y1, r1*2, r1/4);
-    rect(x1+6,y1+3,6,6);
-    ellipse(x1+16,y1+8,r1*1.5,r1/6);
+    ellipse(x1,y1,20,20);
     
- //Makes the ship move
+    ellipse(x1-20,y1,20,40);
+    ellipse(x1+20,y1,20,40);
     
-    
+
+    //Makes the ship move
+
+
     x1=x1+s1;
-    
+
     //put the ship back on screen
     if (x1<-25) {
       x1=1000;
-      y1=random(100,500);
+      y1=random(100, 500);
       return;
     }
-   
+
     //Ship is still on screen
     return;
   }
- //get x
+  //get x
   //Purpose: to return the cordinates of the ship
   float getX() {
     return x1;
@@ -60,5 +61,3 @@ class Enemy {
     return r1;
   }
 }
-
- 
