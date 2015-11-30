@@ -31,7 +31,39 @@ boolean update(){
   return true;
   
 }
+void bulletreset(){
+  y1=origy;
 }
+
+boolean istouching (Enemy c){
+  
+  float a=y1-c.getY();
+  float b=x1-c.getX();
+  distance=sqrt(a*a+b*b);
+  
+  if(distance<(r1+c.getR()*.75)){
+    return true;
+  }
+  
+  return false;
+}
+
+float getX(){
+  return x1;
+  
+}
+
+float getY(){
+  
+  return y1;
+}
+
+float getR(){
+  
+  return r1;
+}
+}
+
   
   
   

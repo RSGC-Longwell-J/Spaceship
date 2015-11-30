@@ -47,6 +47,7 @@ class Enemy {
     //Ship is still on screen
     return;
   }
+  
   //get x
   //Purpose: to return the cordinates of the ship
   float getX() {
