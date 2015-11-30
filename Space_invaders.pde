@@ -7,13 +7,13 @@ Enemy e3;
 Enemy e4;
 Turret t;
 PImage space;
-x
+
 
 //things that run once
 void setup() {
 
   frameRate(60);
-  size(850, 1025);
+  size(850, 755);
   space=loadImage("space-2.jpg");
   background(0);
   
@@ -21,7 +21,7 @@ void setup() {
   e2=new Enemy(-300, random(100,500),4);
   e3=new Enemy(-50, random(100,500),2);
   e4=new Enemy(1000, random(100,500),-1);
-  t=new Turret(425,1000);
+  t=new Turret(425,730);
 }
 
 //things that run multiple times
@@ -34,12 +34,5 @@ void draw() {
   e4.update();
   t.update();
   noStroke();
- 
-  
-
-  
-
-
-
  
 }

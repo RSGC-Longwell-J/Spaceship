@@ -14,9 +14,9 @@ class Turret {
  void update(){
    
    fill(255,255,255);
-   rect(x1+5, y1-5,r1,r1);
+   rect(x1+5, y1-15,r1,r1*2);
    fill(255,125,255);
-   rect(x1,y1,r1*2,r1*2);
+   rect(x1-5,y1,r1*3,r1*3);
  }
 
 
