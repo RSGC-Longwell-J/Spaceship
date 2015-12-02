@@ -8,6 +8,7 @@ Enemy e4;
 Turret t;
 Bullet b1;
 boolean bulletfired;
+int score;
 float distance;
 float shooterX;
 float shooterY;
@@ -57,4 +58,57 @@ void draw() {
      }
    }
  }
+ 
+ //Score when Hits
+  if (b1.isTouching(e1)) {
+    fill(255, 125, 255);
+    textSize(80);
+    text("Hit ", 275, 100);
+    score = score + 10;
+    b1.bulletresetY();
+    e1.shipdies();
+    bulletfired=false;
+    //noLoop(); //this stops it
+  }
+   
+  //Score when Hits
+  if (b1.isTouching(e2)) {
+    fill(255);
+    textSize(80);
+    text("Hit ", 275, 100);
+    b1.bulletresetY();
+    bulletfired=false;
+    e2.shipdies();
+    score = score + 10;
+    
+  }
+    //noLoop(); //this stops it
+  
+  //show on screen
+    //Score when Hit
+  if (b1.isTouching(e3)) {
+    fill(255);
+    textSize(80);
+    text("Hit ", 275, 100);
+    b1.bulletresetY();
+    bulletfired=false;
+    e3.shipdies();
+    score = score + 10;
+    //noLoop(); //this stops it
+  }
+ // Score when Hits
+  if (b1.isTouching(e4)) {
+    fill(255);
+    textSize(80);
+    text("Hit ", 275, 100);
+    b1.bulletresetY();
+    e4.shipdies();
+    bulletfired=false;
+    score = score + 10;   
+    //noLoop(); //this stops it
+  }
+  fill(255);
+  textSize(20);
+  text("Score is"+score, 600, 50);
+ 
 }

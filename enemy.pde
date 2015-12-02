@@ -48,6 +48,12 @@ class Enemy {
     return;
   }
   
+  void shipdies(){
+    shipfill1=0;
+    shipfill2=0;
+    shipfill3=0;
+  }
+  
   //get x
   //Purpose: to return the cordinates of the ship
   float getX() {

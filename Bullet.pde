@@ -31,11 +31,11 @@ boolean update(){
   return true;
   
 }
-void bulletreset(){
+void bulletresetY(){
   y1=origy;
 }
 
-boolean istouching (Enemy c){
+boolean isTouching (Enemy c){
   
   float a=y1-c.getY();
   float b=x1-c.getX();
