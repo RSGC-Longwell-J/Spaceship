@@ -18,7 +18,7 @@ float shooterY;
 void setup() {
 
   frameRate(60);
-  size(850, 755);
+  size(850, 1000);
   background(0);
   
   shooterX = 425;
@@ -31,7 +31,7 @@ void setup() {
   
   t=new Turret(425,730);
   
-  b1 = new Bullet(shooterX+10,shooterY,-10);
+  b1 = new Bullet(shooterX+10,shooterY,-15);
   bulletfired = false;
 }
 

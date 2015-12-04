@@ -1,4 +1,4 @@
-class Enemy {
+class Ally {
   //Global variables
   float x1;
   float y1;
@@ -10,15 +10,15 @@ class Enemy {
   int shipfill3;
 
   //Constructor
-  Enemy (float x_, float y_, float s_) {
+  Ally (float x_, float y_, float s_) {
     x1=x_;
     y1=y_;
     s1=s_;
     orig_s_=s_;
     r1=25;
-    shipfill1 = 142;
-    shipfill2 = 136;
-    shipfill3 = 136;
+    shipfill1 = 255;
+    shipfill2 = 255;
+    shipfill3 = 255;
   }
 
   //Draws things related to ship
@@ -26,9 +26,7 @@ class Enemy {
 
     //Ship body
     fill(shipfill1, shipfill2, shipfill3);
-    ellipse(x1-20,y1,20,40);
-    ellipse(x1+20,y1,20,40);
-    ellipse(x1,y1,20,20);
+    line(x1,y1,425,425); 
 
     //Makes the ship move
     x1=x1+s1;
