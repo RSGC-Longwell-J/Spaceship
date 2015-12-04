@@ -41,10 +41,21 @@ boolean isTouching (Enemy c){
   float b=x1-c.getX();
   distance=sqrt(a*a+b*b);
   
-  if(distance<(r1+c.getR()*.75)){
+  if(distance<(r1+c.getR()*1)){
     return true;
   }
   
+  return false;
+}
+
+boolean isTouching (Ally c){
+  float a=y1-c.getY();
+  float b=x1-c.getX();
+  distance=sqrt(a*a+b*b);
+  
+  if(distance<(r1+c.getR()*1)){
+    return true;
+  }
   return false;
 }
 

@@ -7,6 +7,8 @@ Enemy e3;
 Enemy e4;
 Turret t;
 Bullet b1;
+Ally a1;
+Ally a2;
 boolean bulletfired;
 int score;
 float distance;
@@ -33,6 +35,9 @@ void setup() {
   
   b1 = new Bullet(shooterX+10,shooterY,-15);
   bulletfired = false;
+  
+  a1 = new Ally(600,random(100,500),-2);
+  a2 = new Ally(-500,random(100,500),2);
 }
 
 //things that run multiple times
@@ -45,7 +50,9 @@ void draw() {
   e3.update();
   e4.update();
   t.update();
- 
+  a1.update();
+  a2.update();
+
  
  if(bulletfired){
    bulletfired=b1.update();
@@ -68,7 +75,7 @@ void draw() {
     b1.bulletresetY();
     e1.shipdies();
     bulletfired=false;
-    //noLoop(); //this stops it
+    
   }
    
   //Score when Hits
@@ -82,9 +89,7 @@ void draw() {
     score = score + 10;
     
   }
-    //noLoop(); //this stops it
-  
-  //show on screen
+ 
     //Score when Hit
   if (b1.isTouching(e3)) {
     fill(255);
@@ -94,7 +99,7 @@ void draw() {
     bulletfired=false;
     e3.shipdies();
     score = score + 10;
-    //noLoop(); //this stops it
+    
   }
  // Score when Hits
   if (b1.isTouching(e4)) {
@@ -105,8 +110,32 @@ void draw() {
     e4.shipdies();
     bulletfired=false;
     score = score + 10;   
-    //noLoop(); //this stops it
   }
+  
+  //Score when Hits
+  if (b1.isTouching(a1)) {
+   fill(255);
+   textSize(80);
+   text("Hit ", 275, 100);
+   b1.bulletresetY();
+   a1.shipdies();
+   bulletfired=false;
+   score = score -20;   
+
+  }
+  
+  //Score when Hits
+    if (b1.isTouching(a2)) {
+   fill(255);
+   textSize(80);
+   text("Hit ", 275, 100);
+   b1.bulletresetY();
+   a2.shipdies();
+   bulletfired=false;
+   score = score -20;   
+
+  }
+  
   fill(255);
   textSize(20);
   text("Score is"+score, 600, 50);
