@@ -1,9 +1,9 @@
 class Ally {
+  
   //Global variables
   float x1;
   float y1;
   float s1;
-  float x2;
   float y2;
   float orig_s_;
   float r1;
@@ -15,7 +15,6 @@ class Ally {
   Ally (float x_, float y_,float s_) {
     x1=x_;
     y1=y_;
-    x2=500;
     y2=y1;
     s1=s_;
     orig_s_=s_;
@@ -35,7 +34,6 @@ class Ally {
 
     //Makes the ship move
     x1=x1+s1;
-    x2=x2+s1;
 
     //put the ship back on screen
     if ((x1<-25) &(orig_s_<0)) {
@@ -43,6 +41,8 @@ class Ally {
       y1=random(100, 500);
       return;
     }
+    
+    
  //put the ship back on screen
     if((x1>900) & (orig_s_>0)){
       x1=-75;
@@ -52,7 +52,7 @@ class Ally {
     //Ship is still on screen
     return;
   }
-   //what happends if the bullet hits that ship
+   //what happends when the bullet hits that ship
   void shipdies(){
  y1=1000;
  

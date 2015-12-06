@@ -3,6 +3,7 @@ class Turret {
  int y1;
  int x1;
  int r1;
+ 
  Turret(int x_, int y_) {
  
  y1=y_;
@@ -18,12 +19,4 @@ class Turret {
    fill(255,125,255);
    rect(x1-5,y1,r1*3,r1*3);
  }
-
-
-float getY(){
-  
-  return y1;
-}
-
-
 }

@@ -6,6 +6,7 @@ class Bullet{
   float s1;
   float r1;
   float origy;
+  
   Bullet(float x_, float y_,float s_){
   
   x1=x_;
@@ -35,44 +36,30 @@ void bulletresetY(){
   y1=origy;
 }
 
-boolean isTouching (Enemy c){
+boolean isTouching (Enemy TF){
   
-  float a=y1-c.getY();
-  float b=x1-c.getX();
+  float a=y1-TF.getY();
+  float b=x1-TF.getX();
   distance=sqrt(a*a+b*b);
   
-  if(distance<(r1+c.getR()*1)){
+  if(distance<(r1+TF.getR())){
     return true;
   }
   
   return false;
 }
 
-boolean isTouching (Ally c){
-  float a=y1-c.getY();
-  float b=x1-c.getX();
+boolean isTouching (Ally AL){
+  float a=y1-AL.getY();
+  float b=x1-AL.getX();
   distance=sqrt(a*a+b*b);
   
-  if(distance<(r1+c.getR()*1)){
+  if(distance<(r1+AL.getR()*1)){
     return true;
   }
   return false;
 }
 
-float getX(){
-  return x1;
-  
-}
-
-float getY(){
-  
-  return y1;
-}
-
-float getR(){
-  
-  return r1;
-}
 }
 
   
