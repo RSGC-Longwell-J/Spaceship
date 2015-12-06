@@ -20,9 +20,9 @@ class Ally {
     s1=s_;
     orig_s_=s_;
     r1=25;
-    shipfill1 = 255;
-    shipfill2 = 255;
-    shipfill3 = 255;
+    shipfill1 = 100;
+    shipfill2 = 100;
+    shipfill3 = 100;
   }
 
   //Draws things related to ship
@@ -43,7 +43,7 @@ class Ally {
       y1=random(100, 500);
       return;
     }
-
+ //put the ship back on screen
     if((x1>900) & (orig_s_>0)){
       x1=-75;
       y1=random(100,500);
@@ -52,7 +52,7 @@ class Ally {
     //Ship is still on screen
     return;
   }
-  
+   //what happends if the bullet hits that ship
   void shipdies(){
  y1=1000;
  

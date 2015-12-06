@@ -20,8 +20,11 @@ float shooterY;
 void setup() {
 
   frameRate(60);
-  size(850, 1000);
+  size(1080, 1000);
   background(0);
+  
+  fill(255);
+  rect(880,0,1080,1000);
   
   shooterX = 425;
   shooterY = 730;
@@ -36,7 +39,7 @@ void setup() {
   b1 = new Bullet(shooterX+10,shooterY,-15);
   bulletfired = false;
   
-  a1 = new Ally(600,random(100,500),-2);
+  a1 = new Ally(1000,random(100,500),-2);
   a2 = new Ally(-500,random(100,500),2);
 }
 
@@ -52,7 +55,26 @@ void draw() {
   t.update();
   a1.update();
   a2.update();
-
+  
+  fill(255);
+  rect(880,0,1080,1000);
+  fill(0);
+  textSize(35);
+ text("Instructions", 880, 75);
+ text("Ally", 950, 140);
+ text("Enemy", 930, 290);
+ text("Shooter", 920, 400);
+ fill(100,100,100);
+ ellipse(985,200,50,50);
+ fill(142,136,136); 
+  ellipse(960,350,20,40);
+    ellipse(1000,350,20,40);
+    ellipse(980,350,20,20);
+    
+     fill(255,255,255);
+   rect(950,400,10,30);
+   fill(255,125,255);
+   rect(965,430,30,30);
  
  if(bulletfired){
    bulletfired=b1.update();
