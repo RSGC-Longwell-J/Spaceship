@@ -9,11 +9,14 @@ Turret t;
 Bullet b1;
 Ally a1;
 Ally a2;
+Timer t1;
 boolean bulletfired;
 int score;
 float distance;
 float shooterX;
 float shooterY;
+int s;
+int m;
 
 
 //things that run once
@@ -41,6 +44,9 @@ void setup() {
   
   a1 = new Ally(1000,random(100,500),-2);
   a2 = new Ally(-500,random(100,500),2);
+  
+  t1 = new Timer();
+  t1.start();
 }
 
 //things that run multiple times
@@ -55,6 +61,10 @@ void draw() {
   t.update();
   a1.update();
   a2.update();
+  
+  s = second();
+  m = minute();
+  text(m+":"+s, 800, 50);
   
   fill(255);
   rect(880,0,1080,1000);
