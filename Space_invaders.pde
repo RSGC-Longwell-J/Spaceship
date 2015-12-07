@@ -8,6 +8,10 @@ Bullet b1;
 Ally a1;
 Ally a2;
 
+import processing.sound.*;
+SoundFile explosion;
+SoundFile lazor;
+
 boolean bulletfired;
 int score;
 float distance;
@@ -27,6 +31,9 @@ void setup() {
   fill(255);
   rect(880,0,1080,1000);
   
+   explosion=new SoundFile(this, "Bomb_Exploding-Sound_Explorer-68256487.mp3");
+   lazor=new SoundFile(this, "Laser_Cannon-Mike_Koenig-797224747.mp3");
+   
   shooterX = 425;
   shooterY = 730;
 
@@ -95,6 +102,7 @@ void draw() {
    if(key == 'b'){
      if(!bulletfired){
        bulletfired = true;
+       lazor.play();
      }
    }
  }
@@ -109,7 +117,7 @@ void draw() {
     b1.bulletresetY();
     e[i].shipdies();
     bulletfired=false;
-    
+    explosion.play();
   }
  }
   
@@ -123,7 +131,7 @@ void draw() {
    a1.shipdies();
    bulletfired=false;
    score = score -20;   
-
+ explosion.play();
   }
   
   //Score when Hits
@@ -135,7 +143,7 @@ void draw() {
    a2.shipdies();
    bulletfired=false;
    score = score -20;   
-
+ explosion.play();
   }
   
   fill(255);
