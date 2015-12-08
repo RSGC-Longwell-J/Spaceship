@@ -2,6 +2,7 @@
 
 //variables
 Enemy [] e = new Enemy [4];
+Ally [] a = new Ally [2];
 
 Turret t;
 Bullet b1;
@@ -47,8 +48,10 @@ void setup() {
   b1 = new Bullet(shooterX+10,shooterY,-15);
   bulletfired = false;
   
-  a1 = new Ally(1000,random(100,500),-2);
-  a2 = new Ally(-500,random(100,500),2);
+ for (int i=0; i< a.length; i++){ 
+      if (i%2==0){ a[i] = new Ally((1000 + i*50), random(100,500), -1*(2+i));}
+      else { a[i] = new Ally((-100 - i*100), random(100,500), 1*(2+i));}
+ }
   
 }
 
@@ -62,9 +65,11 @@ void draw() {
   e[i].update();
  }
  
+  for (int i=0; i< a.length; i++){
+  a[i].update();
+ }
+ 
   t.update();
-  a1.update();
-  a2.update();
  
 //timer
   if (frameCount % 60 == 0) { s=s+1; }
@@ -118,32 +123,23 @@ void draw() {
     e[i].shipdies();
     bulletfired=false;
     explosion.play();
+    explosion.amp(3);
   }
  }
   
-  
   //Score when Hits
-  if (b1.isTouching(a1)) {
-   fill(255);
-   textSize(80);
-   text("Hit ", 275, 100);
-   b1.bulletresetY();
-   a1.shipdies();
-   bulletfired=false;
-   score = score -20;   
- explosion.play();
+  for (int i=0; i< a.length; i++){
+  if (b1.isTouching(a[i])) {
+    fill(255, 125, 255);
+    textSize(80);
+    text("Hit ", 275, 100);
+    score = score + 10;
+    b1.bulletresetY();
+    a[i].shipdies();
+    bulletfired=false;
+    explosion.play();
+    explosion.amp(3);
   }
-  
-  //Score when Hits
-    if (b1.isTouching(a2)) {
-   fill(255);
-   textSize(80);
-   text("Hit ", 275, 100);
-   b1.bulletresetY();
-   a2.shipdies();
-   bulletfired=false;
-   score = score -20;   
- explosion.play();
   }
   
   fill(255);
@@ -151,6 +147,3 @@ void draw() {
   text("Score is "+score, 600, 50);
  
 }
-void mousePressed() {
-   loop();
- }
