@@ -87,6 +87,9 @@ void draw() {
  text("Ally", 950, 140);
  text("Enemy", 930, 290);
  text("Shooter", 920, 400);
+ textSize(25);
+ text("Press B to fire",900,500);
+ 
  fill(100,100,100);
  ellipse(985,200,50,50);
  fill(142,136,136); 
@@ -98,6 +101,8 @@ void draw() {
    rect(950,400,10,30);
    fill(255,125,255);
    rect(965,430,30,30);
+   
+   
  
  if(bulletfired){
    bulletfired=b1.update();
