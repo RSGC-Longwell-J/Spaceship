@@ -117,6 +117,25 @@ void draw() {
    }
  }
  
+ //How to win
+ 
+ if(score > 190){
+   
+   noLoop();
+   textSize(50);
+   fill(33,0,227);
+   text("Victory", 440,200);
+   text("Time", 455,350);
+   text(m+":"+s, 470, 500);
+ }
+ 
+ //How to Lose
+ if(m>0){
+   noLoop();
+   textSize(70);
+   text("Defeat", 440,200);
+ }
+ 
  //Score when Hits
  for (int i=0; i< e.length; i++){
   if (b1.isTouching(e[i])) {
@@ -138,7 +157,7 @@ void draw() {
     fill(255, 125, 255);
     textSize(80);
     text("Hit ", 275, 100);
-    score = score + 10;
+    score = score -20;
     b1.bulletresetY();
     a[i].shipdies();
     bulletfired=false;

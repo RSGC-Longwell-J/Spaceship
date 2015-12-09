@@ -15,7 +15,7 @@ class Enemy {
     y1=y_;
     s1=s_;
     orig_s_=s_;
-    r1=25;
+    r1=28;
     shipfill1 = 142;
     shipfill2 = 136;
     shipfill3 = 136;
