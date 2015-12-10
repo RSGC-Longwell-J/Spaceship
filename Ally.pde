@@ -13,6 +13,8 @@ class Ally {
 
   //Constructor
   Ally (float x_, float y_,float s_) {
+    
+    //Declaring variable values
     x1=x_;
     y1=y_;
     y2=y1;
@@ -43,22 +45,22 @@ class Ally {
     }
     
     
- //put the ship back on screen
+   //put the ship back on screen
     if((x1>900) & (orig_s_>0)){
       x1=-75;
       y1=random(100,500);
     }
-    
-    //Ship is still on screen
+   //Ship is still on screen
     return;
   }
-   //what happends when the bullet hits that ship
+    
+   //what happends when the bullet hits a ship
   void shipdies(){
  y1=1000;
  
   }
   
-  //Purpose: to return the cordinates of the ship
+  //return the cordinates of the ship
   float getX() {
     return x1;
   }

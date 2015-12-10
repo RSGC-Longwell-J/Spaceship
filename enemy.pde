@@ -33,7 +33,7 @@ class Enemy {
     //Makes the ship move
     x1=x1+s1;
 
-    //put the ship back on screen
+    //puts the ship back on screen
     if ((x1<-25) &(orig_s_<0)) {
       x1=1000;
       y1=random(100, 500);
@@ -47,14 +47,13 @@ class Enemy {
     //Ship is still on screen
     return;
   }
-  
+  //what happens if a bullet hits a ship
   void shipdies(){
  y1=1000;
  
   }
   
-  //get x
-  //Purpose: to return the cordinates of the ship
+  //return the cordinates of the ship
   float getX() {
     return x1;
   }
